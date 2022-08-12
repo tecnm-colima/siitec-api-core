@@ -1,0 +1,15 @@
+{
+    "name": "itcolima/siitec-api-models",
+    "description": "Modelos de datos para la API de SIITEC.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ITColima\\SiitecApi\\Models\\" : "src"
+        }
+    },
+    "require": {
+        "psr/http-message": "^1.0",
+        "francerz/enum": "^0.1.1",
+        "francerz/http-utils": "^0.2.48"
+    }
+}
