@@ -2,9 +2,7 @@
 
 namespace ITColima\SiitecApi\Model\App\Usuarios;
 
-use Francerz\Http\Utils\HttpHelper;
 use JsonSerializable;
-use Psr\Http\Message\MessageInterface;
 
 class Aspirante implements JsonSerializable
 {
@@ -23,23 +21,6 @@ class Aspirante implements JsonSerializable
     // usuarios_correos
     public $correo;
     public $correo_verify;
-
-    public static function fromHttpMessage(MessageInterface $message)
-    {
-        $data = HttpHelper::getContent($message);
-        $aspirante = new self();
-        $aspirante->id_usuario = $data->id_usuario ?? null;
-        $aspirante->usuario = $data->usuario ?? null;
-        $aspirante->password = $data->password ?? null;
-        $aspirante->id_aspirante = $data->id_aspirante ?? null;
-        $aspirante->nombres = $data->nombres ?? null;
-        $aspirante->apellido1 = $data->apellido1 ?? null;
-        $aspirante->apellido2 = $data->apellido2 ?? null;
-        $aspirante->curp = $data->curp ?? null;
-        $aspirante->correo = $data->correo ?? null;
-        $aspirante->correo_verify = $data->correo_verify ?? null;
-        return $aspirante;
-    }
 
     public function jsonSerialize()
     {

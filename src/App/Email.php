@@ -2,9 +2,7 @@
 
 namespace ITColima\SiitecApi\Model\App;
 
-use Francerz\Http\Utils\HttpHelper;
 use JsonSerializable;
-use Psr\Http\Message\MessageInterface;
 
 class Email implements JsonSerializable
 {
@@ -16,21 +14,6 @@ class Email implements JsonSerializable
     private $charset = null;
     private $subject = '';
     private $body = '';
-
-    public static function fromHttpMessage(MessageInterface $message)
-    {
-        $content = HttpHelper::getContent($message);
-        $email = new static();
-        $email->to = is_object($content->to) || is_array($content->to) ? (array)$content->to : [];
-        $email->cc = is_object($content->cc) || is_array($content->cc) ? (array)$content->cc : [];
-        $email->bcc = is_object($content->bcc) || is_array($content->bcc) ? (array)$content->bcc : [];
-        $email->replyTo = is_object($content->replyTo) || is_array($content->replyTo) ? (array)$content->replyTo : [];
-        $email->contentType = is_string($content->contentType) ? $content->contentType : 'text/plain';
-        $email->charset = is_string($content->charset) ? $content->charset : null;
-        $email->subject = is_string($content->subject) ? $content->subject : '';
-        $email->body = is_string($content->body) ? $content->body : '';
-        return $email;
-    }
 
     public function jsonSerialize()
     {

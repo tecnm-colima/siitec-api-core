@@ -8,8 +8,6 @@
         }
     },
     "require": {
-        "psr/http-message": "^1.0",
-        "francerz/enum": "^0.1.1",
-        "francerz/http-utils": "^0.2.48"
+        "francerz/enum": "^0.1.1"
     }
 }
