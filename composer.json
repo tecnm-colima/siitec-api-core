@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "ITColima\\SiitecApi\\Models\\": "src/Models",
+            "ITColima\\SiitecApi\\Model\\": "src/Model",
             "ITColima\\SiitecApi\\Core\\": "src/Core"
         }
     },

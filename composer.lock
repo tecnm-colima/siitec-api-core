@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9ec48ff46c8f1ef7a120b508ab7c547",
+    "content-hash": "8db9486940ecf79417fb57f4f623d3de",
     "packages": [
         {
             "name": "francerz/enum",
