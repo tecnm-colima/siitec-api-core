@@ -9,6 +9,8 @@
         }
     },
     "require": {
-        "francerz/enum": "^0.1.1"
+        "francerz/enum": "^0.1.1",
+        "psr/http-message": "^1.0",
+        "francerz/php-power-data": "^0.1.28"
     }
 }

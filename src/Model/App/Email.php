@@ -2,18 +2,39 @@
 
 namespace ITColima\SiitecApi\Model\App;
 
+use Francerz\PowerData\Objects;
 use JsonSerializable;
+use Psr\Http\Message\MessageInterface;
+use RuntimeException;
 
 class Email implements JsonSerializable
 {
+    /** @var string[] */
     private $to = [];
+    /** @var string[] */
     private $cc = [];
+    /** @var string[] */
     private $bcc = [];
+    /** @var string[] */
     private $replyTo = [];
+    /** @var string */
     private $contentType = 'text/plain';
+    /** @var string|null */
     private $charset = null;
+    /** @var string */
     private $subject = '';
+    /** @var string */
     private $body = '';
+
+    public static function fromHttpMessage(MessageInterface $message)
+    {
+        $content = (string)$message->getBody();
+        $data = json_decode($content);
+        if (!is_object($data)) {
+            throw new RuntimeException('Invalid message content');
+        }
+        return Objects::cast($data, static::class);
+    }
 
     public function jsonSerialize()
     {
