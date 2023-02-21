@@ -20,6 +20,8 @@ class Perfil
     public $sexo;
     /** @var string */
     public $curp;
+    /** @var string|null */
+    public $rfc;
     /** @var int */
     public $activo;
     /** @var string */
