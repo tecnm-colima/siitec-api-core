@@ -14,7 +14,9 @@ class PerfilesEnum extends AbstractEnum
 
     public const ID_SUBDIR_ACADEMICA = 18;
     public const ID_SUBDIR_PLANEACION = 28;
+    /** @deprecated v0.1.12 Bad written (typo) */
     public const ID_SUBDIR_ADMINSITRATIVA = 19;
+    public const ID_SUBDIR_ADMINISTRATIVA = 19;
 
     public const ID_JEFATURA_ACADEMICA = 9;
     public const ID_JEFATURA_ADMINISTRATIVA = 21;
