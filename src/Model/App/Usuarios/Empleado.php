@@ -2,6 +2,14 @@
 
 namespace ITColima\SiitecApi\Model\App\Usuarios;
 
+/**
+ * @property-read string $id_departamento
+ * @property-read string $departamento
+ * @property-read string $departamento_corto
+ * @property-read string $id_departamento_academico
+ * @property-read string $departamento_academico
+ * @property-read string $departamento_academico_corto
+ */
 class Empleado
 {
     public $id_empleado;
