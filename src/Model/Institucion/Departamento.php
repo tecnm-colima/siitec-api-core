@@ -14,4 +14,5 @@ class Departamento
     public $jefe_apellido1;
     public $jefe_apellido2;
     public $jefe_sexo;
+    public $email;
 }
