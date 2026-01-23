@@ -64,6 +64,11 @@ class Email implements JsonSerializable
         return $this->to;
     }
 
+    public function clearTo()
+    {
+        $this->to = [];
+    }
+
     public function addCc(string $address, ?string $name = null)
     {
         if (isset($name)) {
@@ -76,6 +81,11 @@ class Email implements JsonSerializable
     public function getCc()
     {
         return $this->cc;
+    }
+
+    public function clearCc()
+    {
+        $this->cc = [];
     }
 
     public function addBcc(string $address, ?string $name = null)
@@ -92,6 +102,18 @@ class Email implements JsonSerializable
         return $this->bcc;
     }
 
+    public function clearBcc()
+    {
+        $this->bcc = [];
+    }
+
+    public function clearRecipients()
+    {
+        $this->clearTo();
+        $this->clearCc();
+        $this->clearBcc();
+    }
+
     public function addReplyTo(string $address, ?string $name = null)
     {
         if (isset($name)) {
@@ -104,6 +126,11 @@ class Email implements JsonSerializable
     public function getReplyTo()
     {
         return $this->replyTo;
+    }
+
+    public function clearReplyTo()
+    {
+        $this->replyTo = [];
     }
 
     public function setContentType(string $contentType)
